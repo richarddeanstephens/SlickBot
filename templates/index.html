@@ -64,12 +64,22 @@
 		.form-container input[type=submit]:hover {
 			background-color: #777;
 		}
+
+		.status-container {
+			background-color: #666;
+			color: white;
+			border-radius: 10px;
+			padding: 10px;
+			margin-top: 20px;
+			text-align: center;
+			display: none;
+		}
 	</style>
 </head>
 <body>
 	<div class="container">
 		<div class="form-container">
-			<h2>SlickBot</h2>
+			<h2>SlickBot - Ringless Voicemail</h2>
 			<form method="POST" enctype="multipart/form-data">
 				<label for="phone">Recipient's Phone Number:</label>
 				<input type="tel" id="phone" name="phone" required>
@@ -84,6 +94,19 @@
 				<input type="submit" value="Send Voicemail">
 			</form>
 		</div>
+		<div class="status-container" id="status-container"></div>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("form").submit(function(event) {
+				event.preventDefault();
+				$("#status-container").html("Sending voicemail...");
+				$(".status-container").show();
+				// Add AJAX request here to send voicemail and update status message accordingly
+			});
+		});
+	</script>
 </body>
 </html>
+
