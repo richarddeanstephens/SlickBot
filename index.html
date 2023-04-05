@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to SlickBot</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			background-color: #333;
+			color: white;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+
+		.form-container {
+			background-color: #444;
+			border-radius: 10px;
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.5);
+		}
+
+		.form-container h2 {
+			margin: 0;
+			margin-bottom: 10px;
+			text-align: center;
+		}
+
+		.form-container label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		.form-container input[type=file] {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		.form-container select {
+			display: block;
+			margin-bottom: 10px;
+			width: 100%;
+		}
+
+		.form-container input[type=submit] {
+			background-color: #555;
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 10px;
+		}
+
+		.form-container input[type=submit]:hover {
+			background-color: #777;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="form-container">
+			<h2>SlickBot - Ringless Voicemail</h2>
+			<form method="POST" enctype="multipart/form-data">
+				<label for="phone">Recipient's Phone Number:</label>
+				<input type="tel" id="phone" name="phone" required>
+
+				<label for="audio">Select or Upload Voicemail Audio:</label>
+				<select name="audio" id="audio">
+					<option value="">--Select Audio--</option>
+					<!-- Add dynamically populated dropdown options here -->
+				</select>
+				<input type="file" id="audio-file" name="audio-file">
+
+				<input type="submit" value="Send Voicemail">
+			</form>
+		</div>
+	</div>
+</body>
+</html>
