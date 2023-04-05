@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS voicemails (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    file_name TEXT NOT NULL,
+    date_created TEXT NOT NULL
+);
